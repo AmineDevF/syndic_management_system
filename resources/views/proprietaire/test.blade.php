@@ -1,6 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>creat proprietaire</h1>
+    <h2>tzeeeeeeeeeeeeeeeeeee</h2>
 </body>
 </html>
 @endsection

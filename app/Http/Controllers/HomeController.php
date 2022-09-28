@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +28,9 @@ class HomeController extends Controller
     }
     public function paneaux()
     {
-        return view('admin.index');
+        $users = User::all();
+       
+        return view('admin.index', compact('users'));
     }
+
 }

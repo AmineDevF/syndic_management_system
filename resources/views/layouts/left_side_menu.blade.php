@@ -15,7 +15,14 @@
                       </div>
                       <!-- User box -->
                       <div class="user-box">
-                         <h5><a href="{{url('admin')}}">{{ Auth::user()->email }} </a> </h5>
+                        @guest
+                        @if (Route::has('login'))
+                         <h5><a href="{{url('admin')}}">tst mail </a> </h5>
+                        @endif
+                        @else
+                        <h5><a href="{{url('admin')}}">{{ Auth::user()->email }} </a> </h5>
+
+                         @endguest
                       </div>
                       <!--- Sidemenu -->
                       <div id="sidebar-menu">
@@ -29,8 +36,8 @@
                             <li class="active">
                                <a href="javascript: void(0);" aria-expanded="true"><i class="fi-layers"></i> <span>Proprietaire </span> <span class="menu-arrow"></span></a>
                                <ul class="nav-second-level collapse in" aria-expanded="true" style="">
-                                  <li><a href="{{ url('/creat-Proprietaire') }}">Nouveau proprietaire</a></li>
-                                  <li><a href="{{ url('/proprietaire') }}">Liste proprietaire</a></li>
+                                  <li><a href="{{ url('/propri/create') }}">Nouveau proprietaire</a></li>
+                                  <li><a href="{{ url('/propri') }}">Liste proprietaire</a></li>
                                </ul>
                             </li>
                             <li class="active">
