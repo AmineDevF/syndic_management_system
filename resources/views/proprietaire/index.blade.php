@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>proprietaire</h1>
+    <h1>liste propriétaire :</h1>
 </body>
 </html>
 @endsection

@@ -15,7 +15,7 @@
                       </div>
                       <!-- User box -->
                       <div class="user-box">
-                         <h5><a href="#">Maxine Kennedy</a> </h5>
+                         <h5><a href="{{url('admin')}}">{{ Auth::user()->email }} </a> </h5>
                       </div>
                       <!--- Sidemenu -->
                       <div id="sidebar-menu">
@@ -29,14 +29,14 @@
                             <li class="active">
                                <a href="javascript: void(0);" aria-expanded="true"><i class="fi-layers"></i> <span>Proprietaire </span> <span class="menu-arrow"></span></a>
                                <ul class="nav-second-level collapse in" aria-expanded="true" style="">
-                                  <li><a href="proprietaire/liste.html">Nouveau proprietaire</a></li>
+                                  <li><a href="{{ url('/creat-Proprietaire') }}">Nouveau proprietaire</a></li>
                                   <li><a href="{{ url('/proprietaire') }}">Liste proprietaire</a></li>
                                </ul>
                             </li>
                             <li class="active">
                                <a href="javascript: void(0);" aria-expanded="true"><i class="fi-layers"></i> <span>Propriété </span> <span class="menu-arrow"></span></a>
                                <ul class="nav-second-level collapse in" aria-expanded="true" style="">
-                                  <li><a href="proprietaire/liste.html">Nouveau propriété</a></li>
+                                  <li><a href="{{ url('/creat-propriete') }}">Nouveau propriété</a></li>
                                   <li><a href="{{ url('/propriete') }}">Liste propriété</a></li>
                                </ul>
                             </li>

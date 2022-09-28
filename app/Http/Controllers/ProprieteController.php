@@ -10,4 +10,8 @@ class ProprieteController extends Controller
     {
         return view('propriete.index');
     }
+    public function creat()
+    {
+        return view('propriete.creat');
+    }
 }

@@ -10,4 +10,11 @@ class ProprietairController extends Controller
     {
         return view('proprietaire.index');
     }
+
+    public function creat()
+    {
+        return view('proprietaire.creat');
+    }
+
+
 }
