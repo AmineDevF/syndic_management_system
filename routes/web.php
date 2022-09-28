@@ -24,7 +24,10 @@ Route::get('/', function () {
 // });
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/proprietaire', [App\Http\Controllers\ProprietairController::class, 'index'])->name('proprietaire');
+Route::get('/creat-Proprietaire', [App\Http\Controllers\ProprietairController::class, 'creat']);
 Route::get('/propriete', [App\Http\Controllers\ProprieteController::class, 'index'])->name('propriete');
+Route::get('/creat-propriete', [App\Http\Controllers\ProprieteController::class, 'creat']);
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'paneaux']);
 
 Auth::routes();
 
