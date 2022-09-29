@@ -9,15 +9,15 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <!-- App favicon -->
-      <link rel="shortcut icon" href="assets/images/favicon.ico">
+      <link rel="/shortcut icon" href="assets/images/favicon.ico">
       <!--Footable-->
-      <link href="plugins/footable/css/footable.core.css" rel="stylesheet">
+      <link href="/plugins/footable/css/footable.core.css" rel="stylesheet">
       <!-- App css -->
-      <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-      <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-      <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
-      <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-      <script src="assets/js/modernizr.min.js"></script>
+      <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+      <link href="/assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+      <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+      <script src="/assets/js/modernizr.min.js"></script>
    </head>
    <body>
     <div id="app">
@@ -152,29 +152,29 @@
       </div>
       <!-- END wrapper -->
       <!-- jQuery  -->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/popper.min.js"></script>
-      <script src="assets/js/bootstrap.min.js"></script>
-      <script src="assets/js/metisMenu.min.js"></script>
-      <script src="assets/js/waves.js"></script>
-      <script src="assets/js/jquery.slimscroll.js"></script>
+      <script src="/assets/js/jquery.min.js"></script>
+      <script src="/assets/js/popper.min.js"></script>
+      <script src="/assets/js/bootstrap.min.js"></script>
+      <script src="/assets/js/metisMenu.min.js"></script>
+      <script src="/assets/js/waves.js"></script>
+      <script src="/assets/js/jquery.slimscroll.js"></script>
       <!-- Flot chart -->
-      <script src="plugins/flot-chart/jquery.flot.min.js"></script>
-      <script src="plugins/flot-chart/jquery.flot.time.js"></script>
-      <script src="plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
-      <script src="plugins/flot-chart/jquery.flot.resize.js"></script>
-      <script src="plugins/flot-chart/jquery.flot.pie.js"></script>
-      <script src="plugins/flot-chart/jquery.flot.crosshair.js"></script>
-      <script src="plugins/flot-chart/curvedLines.js"></script>
-      <script src="plugins/flot-chart/jquery.flot.axislabels.js"></script>
+      <script src="/plugins/flot-chart/jquery.flot.min.js"></script>
+      <script src="/plugins/flot-chart/jquery.flot.time.js"></script>
+      <script src="/plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
+      <script src="/plugins/flot-chart/jquery.flot.resize.js"></script>
+      <script src="/plugins/flot-chart/jquery.flot.pie.js"></script>
+      <script src="/plugins/flot-chart/jquery.flot.crosshair.js"></script>
+      <script src="/plugins/flot-chart/curvedLines.js"></script>
+      <script src="/plugins/flot-chart/jquery.flot.axislabels.js"></script>
       <!-- KNOB JS -->
       <!--[if IE]>
       <script type="text/javascript" src="plugins/jquery-knob/excanvas.js"></script>
       <![endif]-->
-      <script src="plugins/jquery-knob/jquery.knob.js"></script>
+      <script src="/plugins/jquery-knob/jquery.knob.js"></script>
       <!-- App js -->
-      <script src="assets/js/jquery.core.js"></script>
-      <script src="assets/js/jquery.app.js"></script>
+      <script src="/assets/js/jquery.core.js"></script>
+      <script src="/assets/js/jquery.app.js"></script>
       </div>
    </body>
 </html>

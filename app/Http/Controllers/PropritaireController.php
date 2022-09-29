@@ -61,9 +61,9 @@ class PropritaireController extends Controller
      * @param  \App\Proprietaire  $proprietaire
      * @return \Illuminate\Http\Response
      */
-    public function show(Proprietaire $proprietaire)
+    public function show($propri)
     {
-       
+        $proprietaire = Proprietaire::findOrFail($propri);
         
         return view('proprietaire.show',compact('proprietaire'));
     } 
@@ -74,10 +74,10 @@ class PropritaireController extends Controller
      * @param  \App\Proprietaire  $proprietaire
      * @return \Illuminate\Http\Response
      */
-    public function edit(Proprietaire $proprietaire)
+    public function edit($propri)
     {
-        
-        return view('proprietaire.edit',compact('proprietaire'));
+        $proprietaire = Proprietaire::findOrFail($propri);
+        return view('proprietaire.edite',compact('proprietaire'));
     }
     
     /**
@@ -87,16 +87,19 @@ class PropritaireController extends Controller
      * @param  \App\Proprietaire  $proprietaire
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Proprietaire $proprietaire)
+    public function update(Request $request, $propri)
     {
+       
         $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'nom' => 'required',
+            'prenom' => 'required',
         ]);
-    
+        $proprietaire = Proprietaire::findOrFail($propri);
         $proprietaire->update($request->all());
+
+        
     
-        return redirect()->route('proprietaire.index')
+        return redirect()->route('propri.index')
                         ->with('success','Proprietaire updated successfully');
     }
     
@@ -106,11 +109,12 @@ class PropritaireController extends Controller
      * @param  \App\Proprietaire  $proprietaire
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Proprietaire $proprietaire)
+    public function destroy($propri)
     {
+        $proprietaire = Proprietaire::findOrFail($propri);
         $proprietaire->delete();
     
-        return redirect()->route('proprietaire.index')
+        return redirect()->route('propri.index')
                         ->with('success','Proprietaire deleted successfully');
     }
 }
