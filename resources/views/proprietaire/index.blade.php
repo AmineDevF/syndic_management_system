@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>ItSolutionStuff</h2>
+                <h2>Tout les Propriétaire</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('propri.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('propri.create') }}"> Ajouter Nouveaux propriétaire</a>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
         @endforeach
     </table>
   
-    {!! $proprietaires->links() !!}
+    {!! $proprietaires->links(pagination::bootstrap-4) !!}
       
 
 @endsection

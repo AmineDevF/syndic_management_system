@@ -29,6 +29,9 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 // Route::get('/Pro/{id}', [App\Http\Controllers\ProprietairController::class, 'show'])->name('pro.show');
 // Route::get('/propriete', [App\Http\Controllers\ProprieteController::class, 'index'])->name('propriete');
 // Route::get('/creat-propriete', [App\Http\Controllers\ProprieteController::class, 'creat']);
+Route::get('/p_type', [App\Http\Controllers\Type_ProprieteController::class, 'index'])->name('p_t');
+Route::get('/p_type/create', [App\Http\Controllers\Type_ProprieteController::class, 'create'])->name('p_t.create');
+Route::post('/p_type/store', [App\Http\Controllers\Type_ProprieteController::class, 'store'])->name('p_t.store');
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'paneaux']);
 
 Auth::routes();
@@ -37,3 +40,4 @@ Auth::routes();
 // pannel controle withe role
 
 Route::resource('propri', 'App\Http\Controllers\PropritaireController');
+Route::resource('propriete', 'App\Http\Controllers\ProprieteController');
