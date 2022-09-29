@@ -19,7 +19,7 @@ class ProprieteController extends Controller
      */
     public function index()
     {
-        $proprietes = Propriete::latest()->paginate(20);
+        $proprietes = Propriete::paginate(5);
    
        
         return view('propriete.index', compact('proprietes'))->with('i', (request()->input('page', 1) - 1) * 5);
@@ -48,6 +48,11 @@ class ProprieteController extends Controller
         $request->validate([
             'type_propriete' => 'required',
             'batiment' => 'required',
+            'etage' => 'required',
+            'num_titre' => 'required',
+            'surfac' => 'required',
+            'article_impot' => 'required',
+            
         ]);
     
         Propriete::create($request->all());
@@ -73,9 +78,11 @@ class ProprieteController extends Controller
      * @param  \App\Models\Propriete  $propriete
      * @return \Illuminate\Http\Response
      */
-    public function edit(Propriete $propriete)
+    public function edit( $proprite)
     {
-        //
+        $propriete_types = Type_Propriete::all();
+        $propriete = Propriete::findOrFail($proprite);
+        return view('propriete.edite',compact('propriete','propriete_types'));
     }
 
     /**
@@ -85,9 +92,25 @@ class ProprieteController extends Controller
      * @param  \App\Models\Propriete  $propriete
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Propriete $propriete)
+    public function update(Request $request, Propriete $proprietee , $propriete)
     {
-        //
+        $request->validate([
+            'type_propriete' => 'required',
+            'batiment' => 'required',
+            'etage' => 'required',
+            'num_titre' => 'required',
+            'surfac' => 'required',
+            'article_impot' => 'required',
+            
+            
+        ]);
+        $propriete = Propriete::findOrFail($propriete);
+        $propriete->update($request->all());
+
+        
+    
+        return redirect()->route('propriete.index')
+                        ->with('success','Proprietaire updated successfully');
     }
 
     /**
@@ -96,8 +119,12 @@ class ProprieteController extends Controller
      * @param  \App\Models\Propriete  $propriete
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Propriete $propriete)
+    public function destroy($proprietee)
     {
-        //
+        $propriete = Propriete::findOrFail($proprietee);
+        $propriete->delete();
+    
+        return redirect()->route('propriete.index')
+                        ->with('success','Proprietaire deleted successfully');
     }
 }

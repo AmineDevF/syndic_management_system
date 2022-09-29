@@ -73,8 +73,15 @@
                          </td>
                         
                          <td>
-                            <a href="#" class="btn btn-sm btn-custom"><i class="mdi mdi-plus"></i></a>
-                            <a href="#" class="btn btn-sm btn-danger"><i class="mdi mdi-minus"></i></a>
+                           
+                           <form action="{{ route('propriete.destroy',$propriete->id) }}" method="POST">
+   
+                              <a class="btn btn-primary btn-rounded waves-light waves-effect" href="{{ route('propriete.edit',$propriete->id) }}">Edit</a>
+                              @csrf
+                              @method('DELETE')
+                
+                              <button type="submit" class="btn btn-danger btn-rounded waves-light waves-effect">Delete</button>
+                          </form>
                          </td>
                       </tr>
                       
@@ -87,6 +94,7 @@
        </div>
     </div>
     <!-- end row -->
+    {!! $proprietes->links("pagination::bootstrap-4") !!}
  </div>
  <!-- container -->
 @endsection

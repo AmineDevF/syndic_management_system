@@ -7,7 +7,7 @@
                 <h2>Tout les Propriétaire</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('propri.create') }}"> Ajouter Nouveaux propriétaire</a>
+                <a class="btn btn-success btn-rounded waves-light waves-effect" href="{{ route('propri.create') }}"> Ajouter Nouveaux propriétaire</a>
             </div>
         </div>
     </div>
@@ -18,11 +18,13 @@
         </div>
     @endif
    
-    <table class="table table-bordered">
+    <table class="table table-bordered" style=" background-color: #02c0ce5c;">
         <tr>
-            <th>No</th>
+            <th>#</th>
             <th>Name</th>
             <th>Prenom</th>
+            <th>Téléphone</th>
+            <th>Adresse</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($proprietaires as $proprietaire)
@@ -30,24 +32,26 @@
             <td>{{ ++$i }}</td>
             <td>{{ $proprietaire->nom }}</td>
             <td>{{ $proprietaire->prenom }}</td>
+            <td>{{ $proprietaire->tel }}</td>
+            <td>{{ $proprietaire->adresse }}</td>
             <td>
                 <form action="{{ route('propri.destroy',$proprietaire->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('propri.show',$proprietaire->id) }}">Show</a>
+                    <a class="btn btn-info btn-rounded waves-light waves-effect" href="{{ route('propri.show',$proprietaire->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('propri.edit',$proprietaire->id) }}">Edit</a>
+                    <a class="btn btn-primary btn-rounded waves-light waves-effect" href="{{ route('propri.edit',$proprietaire->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger btn-rounded waves-light waves-effect">Delete</button>
                 </form>
             </td>
         </tr>
         @endforeach
     </table>
   
-    {!! $proprietaires->links(pagination::bootstrap-4) !!}
-      
+    {!! $proprietaires->links("pagination::bootstrap-4") !!}
+   
 
 @endsection

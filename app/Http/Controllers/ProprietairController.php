@@ -9,7 +9,7 @@ class ProprietairController extends Controller
 {
     public function index()
     {
-        $proprietaires = Proprietaire::latest()->paginate(5);
+        $proprietaires = Proprietaire::paginate(30);
    
         
         return view('proprietaire.index', compact('proprietaires'))->with('i', (request()->input('page', 1) - 1) * 5);

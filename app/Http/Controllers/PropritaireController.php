@@ -19,7 +19,7 @@ class PropritaireController extends Controller
      */
     public function index()
     {
-        $proprietaires = Proprietaire::latest()->paginate(5);
+        $proprietaires = Proprietaire::paginate(5);
    
         // return view('proprietaire.index',compact('proprietaires'))
         //     ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -47,6 +47,13 @@ class PropritaireController extends Controller
         $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
+            'cin' => 'required',
+            'adresse' => 'required',
+            'cin' => 'required',
+            'tel' => 'required',
+            'description' => 'required',
+            'email' => 'required',
+            'ville' => 'required',
         ]);
     
         Proprietaire::create($request->all());
@@ -93,6 +100,13 @@ class PropritaireController extends Controller
         $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
+            'cin' => 'required',
+            'adresse' => 'required',
+            'cin' => 'required',
+            'tel' => 'required',
+            'description' => 'required',
+            'email' => 'required',
+            'ville' => 'required',
         ]);
         $proprietaire = Proprietaire::findOrFail($propri);
         $proprietaire->update($request->all());

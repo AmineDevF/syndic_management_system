@@ -29,7 +29,13 @@ class Type_ProprieteController extends Controller
     {
         $request->validate([
            
-            'proprietes_name' => 'required',
+            'type_propriete' => 'required',
+            'batiment' => 'required',
+            'etage' => 'required',
+            'num_titre' => 'required',
+            'surfac' => 'required',
+            'article_impot' => 'required',
+            
         ]);
     
         Type_Propriete::create($request->all());
