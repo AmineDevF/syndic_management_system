@@ -113,9 +113,18 @@
                     <div class="form-group">
                         <label for="userName"> Type propriete</label>
                         <select  class="form-control" name="type_propriete" >
-                         <option value="">Coisire votre p : type</option> 
+                         <option value=""></option> 
                          @foreach ($propriete_types as $propriete_type)
                          <option value="{{$propriete_type->proprietes_name}}">{{$propriete_type->proprietes_name}}</option>
+                         @endforeach
+                         </select>
+                     </div>
+                    <div class="form-group">
+                        <label for="userName"> Propriétaire</label>
+                        <select  class="form-control" name="proprietaire_id" >
+                         <option value=""></option> 
+                         @foreach ($proprietaire_info as $info_pro)
+                         <option value="{{$info_pro->id}}">{{$info_pro->nom}}</option>
                          @endforeach
                          </select>
                      </div>

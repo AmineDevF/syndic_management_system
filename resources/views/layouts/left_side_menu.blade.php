@@ -54,6 +54,13 @@
                                   <li><a href="{{ url('/p_type') }}">Liste propriété Type</a></li>
                                </ul>
                             </li>
+                            <li class="active">
+                               <a href="javascript: void(0);" aria-expanded="true"><i class="fi-layers"></i> <span>Effectué une Facture </span> <span class="menu-arrow"></span></a>
+                               <ul class="nav-second-level collapse in" aria-expanded="true" style="">
+                                  <li><a href="{{ url('/facture/create') }}">Nouvelle Facture</a></li>
+                                  <li><a href="{{ url('/facture') }}">Liste Des  Facture</a></li>
+                               </ul>
+                            </li>
                          </ul>
                       </div>
                       <!-- Sidebar -->

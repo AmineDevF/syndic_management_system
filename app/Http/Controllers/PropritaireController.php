@@ -71,7 +71,7 @@ class PropritaireController extends Controller
     public function show($propri)
     {
         $proprietaire = Proprietaire::findOrFail($propri);
-        
+      
         return view('proprietaire.show',compact('proprietaire'));
     } 
      

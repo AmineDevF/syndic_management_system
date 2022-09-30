@@ -77,6 +77,7 @@
                            <form action="{{ route('propriete.destroy',$propriete->id) }}" method="POST">
    
                               <a class="btn btn-primary btn-rounded waves-light waves-effect" href="{{ route('propriete.edit',$propriete->id) }}">Edit</a>
+                              <a class="btn btn-info btn-rounded waves-light waves-effect" href="{{ route('propriete.show',$propriete->id) }}">Show</a>
                               @csrf
                               @method('DELETE')
                 

@@ -41,3 +41,4 @@ Auth::routes();
 
 Route::resource('propri', 'App\Http\Controllers\PropritaireController');
 Route::resource('propriete', 'App\Http\Controllers\ProprieteController');
+Route::resource('facture', 'App\Http\Controllers\FactureController');

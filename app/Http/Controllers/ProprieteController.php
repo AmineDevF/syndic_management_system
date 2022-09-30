@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Proprietaire;
 use App\Models\Propriete;
 use App\Models\Type_Propriete;
 use Illuminate\Http\Request;
@@ -32,8 +33,9 @@ class ProprieteController extends Controller
      */
     public function create()
     {
+        $proprietaire_info = Proprietaire::all();
         $propriete_types = Type_Propriete::all();
-        return view('propriete.create' , compact('propriete_types'));
+        return view('propriete.create' , compact('propriete_types','proprietaire_info'));
     }
 
     /**
@@ -52,6 +54,7 @@ class ProprieteController extends Controller
             'num_titre' => 'required',
             'surfac' => 'required',
             'article_impot' => 'required',
+            'proprietaire_id' => 'required',
             
         ]);
     
@@ -67,9 +70,14 @@ class ProprieteController extends Controller
      * @param  \App\Models\Propriete  $propriete
      * @return \Illuminate\Http\Response
      */
-    public function show(Propriete $propriete)
+    public function show(Propriete $proprietee , $propriete)
     {
-        //
+        $propriete = Propriete::findOrFail($propriete);
+        //  dd($propriete->proprietaire()) ;
+         $all_proprietaire = Proprietaire::findOrFail($propriete->proprietaire_id);
+       
+        
+        return view('propriete.show',compact('propriete','all_proprietaire'));
     }
 
     /**
@@ -101,6 +109,7 @@ class ProprieteController extends Controller
             'num_titre' => 'required',
             'surfac' => 'required',
             'article_impot' => 'required',
+            'proprietaire_id' => 'required',
             
             
         ]);

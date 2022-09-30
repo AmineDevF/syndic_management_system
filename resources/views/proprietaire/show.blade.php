@@ -56,6 +56,9 @@
 
                 <h3 class="list-group-item">{{ $proprietaire->description }}</h3> 
             </div> 
+            {{-- @foreach ($proprietaire->proprietes as $item)
+            {{$item->surfac}}
+            @endforeach --}}
         </div> 
     </div>
 @endsection
