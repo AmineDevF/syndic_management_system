@@ -109,7 +109,7 @@ class ProprieteController extends Controller
             'num_titre' => 'required',
             'surfac' => 'required',
             'article_impot' => 'required',
-            'proprietaire_id' => 'required',
+            // 'proprietaire_id' => 'required',
             
             
         ]);
@@ -119,7 +119,7 @@ class ProprieteController extends Controller
         
     
         return redirect()->route('propriete.index')
-                        ->with('success','Proprietaire updated successfully');
+                        ->with('success','Propriete updated successfully');
     }
 
     /**
@@ -134,6 +134,6 @@ class ProprieteController extends Controller
         $propriete->delete();
     
         return redirect()->route('propriete.index')
-                        ->with('success','Proprietaire deleted successfully');
+                        ->with('success','Propriete deleted successfully');
     }
 }

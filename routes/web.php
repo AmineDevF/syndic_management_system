@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('layouts.index');
 });
 
+
+
 // Route::get('/dashboard', function () {
 //     return view('layouts.app');
 // });
@@ -29,6 +31,7 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 // Route::get('/Pro/{id}', [App\Http\Controllers\ProprietairController::class, 'show'])->name('pro.show');
 // Route::get('/propriete', [App\Http\Controllers\ProprieteController::class, 'index'])->name('propriete');
 // Route::get('/creat-propriete', [App\Http\Controllers\ProprieteController::class, 'creat']);
+Route::get('/downloadPDF/{id}',[App\Http\Controllers\HomeController::class, 'downloadPDF'])->name('downloadPDF');
 Route::get('/p_type', [App\Http\Controllers\Type_ProprieteController::class, 'index'])->name('p_t');
 Route::get('/p_type/create', [App\Http\Controllers\Type_ProprieteController::class, 'create'])->name('p_t.create');
 Route::post('/p_type/store', [App\Http\Controllers\Type_ProprieteController::class, 'store'])->name('p_t.store');

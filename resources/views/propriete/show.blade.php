@@ -51,7 +51,7 @@
               <div class="col-xs-12 col-sm-12 col-md-12">
   --}}
                 <div class="card-footer mb-4">
-                  <h2> Tout les  Propriétaires info :</h2>  
+                  <h2> Propriétaires info :</h2>  
                 </div>
                 <li class="list-group-item"><b>{{ $all_proprietaire->nom }}</b></li>
                 <li class="list-group-item"><b>{{ $all_proprietaire->prenom }}</b></li>

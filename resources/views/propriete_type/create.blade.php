@@ -1,18 +1,18 @@
+
+
+
+
 @extends('layouts.app')
 @section('content')
-
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Add New Product</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('p_t') }}"> Back</a>
-        </div>
-    </div>
-</div>
-   
-@if ($errors->any())
+<div class="content">
+    <div class="container-fluid">
+       <div class="row">
+          <div class="col-lg-12 ml-5 ">
+             <h2>
+                Creée un nouveaux Type Propriété
+             </h2>
+          </div>
+          @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
         <ul>
@@ -22,22 +22,38 @@
         </ul>
     </div>
 @endif
-   
-<form action="{{ route('p_t.store') }}" method="POST">
-    @csrf
-  
-     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Type Propriété:</strong>
-                <input type="text" name="proprietes_name" class="form-control" placeholder="Name">
-            </div>
-        </div>
-        
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+       </div>
+       <div class="row">
+          <div class="col-lg-8">
+             <div class="card-box">
+                <form action="{{ route('p_t.store') }}" method="POST">
+                    @csrf
+                   <div class="col-lg-8 form-group">
+                      <label for="userName"> Type Propriété </label>
+                      <input type="text" name="proprietes_name" placeholder="Type Propriété" class="form-control" id="userName">
+                   </div>
+                   
+                  
+                   
+                
+             </div>
+             <!-- end card-box -->
+          </div>
+         
+       </div>
+       <!-- end row -->
+       <div class="row">
+          <div class="col-lg-2 text-center">
+             <button type="submit" class="btn btn-success btn-rounded waves-light waves-effect">Valider</button>
+             {{-- <button type="button" class="btn btn-danger btn-rounded waves-light waves-effect">Supprimer</button> --}}
+             <a class="btn btn-outline-info btn-rounded waves-light waves-effect" href="{{ route('p_t') }}">Annuler</a>
+             {{-- <button type="button" class="btn btn-outline-info btn-rounded waves-light waves-effect">Annuler</button> --}}
+          </div>
+       </div>
+       <!-- end row -->
+    </form>
     </div>
-   
-</form> 
-@endsection
+    <!-- container -->
+ </div>
+
+ @endsection

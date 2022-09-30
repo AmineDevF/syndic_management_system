@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFacturesTable extends Migration
+class AddDataInfoToFacturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFacturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('factures', function (Blueprint $table) {
+        Schema::table('factures', function (Blueprint $table) {
             $table->id();
             $table->string('prestation')->nullable();
             $table->string('num_facture')->nullable();
@@ -30,6 +30,8 @@ class CreateFacturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('factures');
+        Schema::table('factures', function (Blueprint $table) {
+            //
+        });
     }
 }

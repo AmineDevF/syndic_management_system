@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Facture;
-
+use App\Models\Propriete;
 use Illuminate\Http\Request;
-
+use PDF;
 class FactureController extends Controller
 {
     /**
@@ -28,7 +28,9 @@ class FactureController extends Controller
      */
     public function create()
     {
-        //
+        $propriete_info = Propriete::all();
+        
+        return view('facture.create' , compact('propriete_info'));
     }
 
     /**
@@ -39,8 +41,22 @@ class FactureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'prestation' => 'required',
+            'num_facture' => 'required',
+            'montant' => 'required',
+            'date_facture' => 'required',
+            'propriete_id' => 'required',
+            
+        ]);
+    
+        Facture::create($request->all());
+     
+        return redirect()->route('facture.index')
+                        ->with('success','Facture created successfully.');
     }
+
+   
 
     /**
      * Display the specified resource.
@@ -82,8 +98,12 @@ class FactureController extends Controller
      * @param  \App\Models\Factures  $factures
      * @return \Illuminate\Http\Response
      */
-    public function destroy(factures $factures)
+    public function destroy($facture)
     {
-        //
+        $factures = Facture::findOrFail($facture);
+        $factures->delete();
+    
+        return redirect()->route('facture.index')
+                        ->with('success','Facture deleted successfully');
     }
 }

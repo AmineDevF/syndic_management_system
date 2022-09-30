@@ -68,9 +68,9 @@
     <div class="row">
        <div class="col-lg-12">
           <div class="card-box">
-             <h4 class="header-title mb-3">Dernieres paiements</h4>
+             <h4 class="header-title mb-3">Syndic Pro</h4>
              <div class="table-responsive">
-                <table class="table table-hover table-centered m-0">
+                {{-- <table class="table table-hover table-centered m-0">
                    <thead>
                       <tr>
                          <th>Profile</th>
@@ -193,7 +193,8 @@
                          </td>
                       </tr>
                    </tbody>
-                </table>
+                </table> --}}
+                <h1>bienvenue dans votre tableau de bord Syndic Pro</h1>
              </div>
           </div>
        </div>
